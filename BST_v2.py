@@ -14,7 +14,7 @@ def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,n
     This code is designed to run on PlanetScope Analytic Surface Reflectance Imagery (SR) which is a reflectance product scaled by 10,000.
     This means the range of the pixel values is 0-10,000 rather than 0-1, which is typical of other SR products. 
     The 10000 scaling factor is worked into this code, which means adjustments must be made to use this code on other SR products. 
-    Future version of the code will include parameters which can be easily modified to designate a scaling factor.
+    Future versions of the code will include parameters which can be easily modified to designate a scaling factor.
     
     
     Parameters
