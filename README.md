@@ -9,7 +9,7 @@
 
 
 Parameters
-----------
+
 wd : string
     full path to directory where input rasters are located and where output rasters will be saved
 inras : string
@@ -29,7 +29,7 @@ meanbluethresh : float, optional
 nosnowthresh : float, optional
     The lower bound on the mean blue reflectance threshold, which is used to determine if the image is snowless
     The default is 1000
+
 Returns
--------
 None.
 
