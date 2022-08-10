@@ -29,7 +29,7 @@ def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,n
         Display kernel density plot of blue reflectance values. The default is False.
     sigma : integer, optional
         The window size for gaussian filtering.This is called 'sigma' in the gaussian_filter1d function.
-        The default here is 5.
+        The default here is 3.
     blueband : integer, optional
         The raster band which corresponds to the blue band. The default is 1.
     meanbluethresh : float, optional
