@@ -11,7 +11,9 @@
 Parameters
 
 wd : string
-    full path to directory where input rasters are located and where output rasters will be saved </n>
+    full path to directory where input rasters are located and where output rasters will be saved
+    
+    
 inras : string
     name of input raster
 outras : string
