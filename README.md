@@ -7,7 +7,7 @@
   Future version of the code will include parameters which can be easily modified to designate a scaling factor.
   
 
-'''
+
 Parameters
 ----------
 wd : string
@@ -32,4 +32,4 @@ nosnowthresh : float, optional
 Returns
 -------
 None.
-'''
+
