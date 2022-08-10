@@ -64,9 +64,8 @@ def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,n
         bluef =blue[~np.isnan(blue)].ravel()
         
         #need to smooth array to remove noise--this will help us find the true peaks
-        #here we set the filter window size to the default of 50
+        #here we set the filter window size to the default of 3
         bluef_sm = gaussian_filter1d(bluef,sigma=sigma)
-        #bluef_sm = bluef_sm/np.max(bluef_sm) ##uncomment to normalize data to range 0-1
         bluef_sm = bluef_sm
         meanblue = np.mean(bluef_sm)
         print('blue mean is: ', meanblue)
@@ -123,15 +122,7 @@ def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,n
                 plt.savefig(f[:-4]+'_thresholdKDE.pdf')
                 plt.show()
                     
-                    
-                # plt.figure(figsize=(6,6))
-                # plt.hist(bluef_sm,bins=50,color='k')
-                # plt.xlabel('Blue reflectance',fontsize=fs);plt.xticks(size=fs,rotation=20)
-                # plt.ylabel('Pixel count',fontsize=fs);plt.yticks(size=fs)
-                # plt.axvline(bluethresh,linestyle='--',color='b')
-                # plt.tight_layout()
-                # plt.savefig(f[:-4]+'_threshold.pdf')
-                # plt.show()
+                  
             
             #generate an array of zeros with the input raster dimensions
             snowBLUE=np.zeros(blue.shape)
