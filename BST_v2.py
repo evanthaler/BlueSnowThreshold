@@ -167,16 +167,16 @@ def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,n
         
         
         
-        
+#####HERE RUN THE FUNCTION####
 #Set working directory
-wd=r'C:\Users\361045\Documents\projects\ngee\imagery\t47\vegetation'
+wd=r'\path\to\directory\where\tifs\are'
 #Get list of tif files in working directory
 flist=glob.glob(wd+'\\'+'*.tif')#for macOS/linux,might need to change '\\' to '/'
 for f in flist: ##we're going to loop through the tifs in the directory and calculate snow on the true color images
     
     inras=f
     #generate path for output file...here we are just throwing the new snow rasters in the working directory
-    outras=f[:-4]+'_snow2.tif'
+    outras=f[:-4]+'_snow.tif'
     BST(wd,inras,outras,False)
 
 
