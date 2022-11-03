@@ -7,6 +7,7 @@ This means the range of the pixel values is 0-10,000 rather than 0-1, which is t
 The 10000 scaling factor is worked into this code as a default for a function argument.  Significant modifications to the code will need to made if the range of values pixel values is not altered by a simple multiplicative scaling. 
 
 Python GDAL is required for this code
+The diptest Python package is also required
 
   
 
