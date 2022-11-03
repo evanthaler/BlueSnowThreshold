@@ -14,7 +14,7 @@ os.environ['GDAL_DATA'] = r'C:\Users\361045\Anaconda3\envs\pygeo\Library\share'
 
 
 
-def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,nosnowthresh=0.1,scalingFactor=10000):
+def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,nosnowthresh=0.01,scalingFactor=10000):
     '''  
     Parameters
     ----------
@@ -104,11 +104,11 @@ def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,n
                 print('threshold value is: ',bluethresh)
                 export=True
                 
-            # elif meanblue <nosnowthresh*scalingFactor:
-            #     print('Are you sure this image has snowy pixels? If you think it does, try decreasing the nosnowthresh value')
-            #     export =False
-            #     outRaster=None
-            #     tif=None
+            elif meanblue <nosnowthresh*scalingFactor:
+                print('Are you sure this image has snowy pixels? If you think it does, try decreasing the nosnowthresh value')
+                export =False
+                outRaster=None
+                tif=None
         else:
             print('diptest p value > 0.05. likely monomodal distribution. set threshold to mean blue reflectance value')
             bluethresh = (meanbluethresh*scalingFactor)
