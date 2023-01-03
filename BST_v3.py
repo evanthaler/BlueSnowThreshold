@@ -186,7 +186,7 @@ def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,n
         
         
 #Set working directory
-wd=r'C:\Users\361045\Documents\projects\ngee\imagery\kr_main\snow\2021Snowmelt'
+wd='set\path\to\tifs\here'
 #Get list of tif files in working directory
 flist=glob.glob(wd+'\\'+'*.tif')#for macOS/linux,might need to change '\\' to '/'
 for f in flist: ##we're going to loop through the tifs in the directory and calculate snow on the true color images
