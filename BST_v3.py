@@ -47,6 +47,12 @@ def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,n
     #Change to directory where images are located
     os.chdir(wd)
     
+    if os.path.exists('./bst'):
+        print('bst directory exists')
+        
+    else:
+        print('gotta make a new directory for bst files')
+        os.mkdir('./bst')
    
     #open image
     tif = gdal.Open(inras)
@@ -157,7 +163,7 @@ def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,n
             
         
             driver = gdal.GetDriverByName('GTiff')
-            outRaster = driver.Create(outras, cols, rows, 1, gdal.GDT_Float32,["COMPRESS=LZW"])
+            outRaster = driver.Create(r'./bst/'+outras, cols, rows, 1, gdal.GDT_Float32,["COMPRESS=LZW"])
             outband=outRaster.GetRasterBand(1)
             
             outRaster.SetGeoTransform((originX, pixelWidth, 0, originY, 0, pixelHeight))
@@ -180,7 +186,7 @@ def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,n
         
         
 #Set working directory
-wd=r'C:\Users\361045\Desktop\sTEST'
+wd=r'C:\Users\361045\Documents\projects\ngee\imagery\kr_main\snow\2021Snowmelt'
 #Get list of tif files in working directory
 flist=glob.glob(wd+'\\'+'*.tif')#for macOS/linux,might need to change '\\' to '/'
 for f in flist: ##we're going to loop through the tifs in the directory and calculate snow on the true color images
