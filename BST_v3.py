@@ -117,7 +117,7 @@ def BST (wd,inras,outras,plotting=False,sigma=3,blueband=1,meanbluethresh=0.70,n
                 tif=None
         else:
             print('diptest p value > 0.05. likely monomodal distribution. set threshold to mean blue reflectance value')
-            bluethresh = (meanbluethresh*scalingFactor)
+            bluethresh = meanblue
             print('threshold value is: ',bluethresh)
             export=True
         
