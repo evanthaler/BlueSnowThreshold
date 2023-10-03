@@ -109,8 +109,7 @@ def BST (wd,inras,outras,plotting=False,blueband=1,meanbluethresh=0.70,nosnowthr
         bluef =blue[~np.isnan(blue)].ravel()
         
         #need to smooth array to remove noise--this will help us find the true peaks
-        #here we set the filter window size to the default of 50
-        #bluef_sm = gaussian_filter1d(bluef,sigma=sigma)
+        #here we set the filter window size to the default of 3
         bluef_sm = smoothsignal(bluef,window_len=3,window='hanning')
         #bluef_sm = bluef_sm/np.max(bluef_sm) ##uncomment to normalize data to range 0-1
         bluef_sm = bluef_sm
@@ -223,7 +222,7 @@ def BST (wd,inras,outras,plotting=False,blueband=1,meanbluethresh=0.70,nosnowthr
         
         
 #Set working directory
-wd=r'C:\Users\361045\Documents\projects\ngee\imagery\t27\snowYr2020\testImage'
+wd=r'path\to\SRtifs'
 os.chdir(wd)
 #Get list of tif files in working directory
 flist=glob.glob('*.tif')#for macOS/linux,might need to change '\\' to '/'
