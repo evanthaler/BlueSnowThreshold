@@ -6,11 +6,6 @@ from scipy.signal import argrelmin
 from scipy.stats import gaussian_kde
 from scipy.ndimage import gaussian_filter1d
 
-##Setting environmental variables for GDAL--might not be necessary for some users
-##These lines can probably be commented out on most machines
-os.environ['PROJ_LIB'] = r'C:\Users\361045\Anaconda3\envs\pygeo\Library\share\proj'
-os.environ['GDAL_DATA'] = r'C:\Users\361045\Anaconda3\envs\pygeo\Library\share'
-
 def smoothsignal(x,window_len=3,window='hanning'):
     """smooth the data using a window with requested size.
     
